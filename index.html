@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Coffee Shop</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">Coffee Shop</div>
+
+      <div class="controls">
+        <div class="search">
+          <label for="search" class="visually-hidden">Search products</label>
+          <input id="search" type="search" placeholder="Search coffee..." />
+        </div>
+
+        <button id="theme-toggle" class="icon-btn" aria-pressed="false" aria-label="Toggle theme">Theme</button>
+        <button id="cart-toggle" class="icon-btn" aria-expanded="false" aria-controls="cart-drawer">
+          Cart <span id="cart-count" class="badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Handcrafted coffee, delivered</h1>
+        <p>Small batch roasts — designed for taste.</p>
+      </div>
+    </section>
+
+    <section class="products-grid" id="products-grid" aria-live="polite">
+      <!-- Product cards -->
+      <article class="product-card" data-name="Latte" data-price="4.50">
+        <div class="img-wrap">
+          <img src="images/latte.jpg" alt="Latte">
+        </div>
+        <div class="card-body">
+          <h3 class="title">Latte</h3>
+          <p class="desc">Creamy steamed milk and rich espresso.</p>
+          <div class="meta">
+            <div class="price">$4.50</div>
+            <div class="actions">
+              <input class="qty" type="number" min="1" value="1" aria-label="Quantity for Latte">
+              <button class="btn add-cart">Add</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-name="Cappuccino" data-price="4.00">
+        <div class="img-wrap">
+          <img src="images/cappuccino.jpg" alt="Cappuccino">
+        </div>
+        <div class="card-body">
+          <h3 class="title">Cappuccino</h3>
+          <p class="desc">Balanced espresso with textured milk foam.</p>
+          <div class="meta">
+            <div class="price">$4.00</div>
+            <div class="actions">
+              <input class="qty" type="number" min="1" value="1" aria-label="Quantity for Cappuccino">
+              <button class="btn add-cart">Add</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-name="Espresso" data-price="3.00">
+        <div class="img-wrap">
+          <img src="images/espresso.jpg" alt="Espresso">
+        </div>
+        <div class="card-body">
+          <h3 class="title">Espresso</h3>
+          <p class="desc">Bold and concentrated shot.</p>
+          <div class="meta">
+            <div class="price">$3.00</div>
+            <div class="actions">
+              <input class="qty" type="number" min="1" value="1" aria-label="Quantity for Espresso">
+              <button class="btn add-cart">Add</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-name="Mocha" data-price="5.00">
+        <div class="img-wrap">
+          <img src="images/mocca.jpg" alt="Mocha">
+        </div>
+        <div class="card-body">
+          <h3 class="title">Mocha</h3>
+          <p class="desc">Chocolate notes with espresso and milk.</p>
+          <div class="meta">
+            <div class="price">$5.00</div>
+            <div class="actions">
+              <input class="qty" type="number" min="1" value="1" aria-label="Quantity for Mocha">
+              <button class="btn add-cart">Add</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Cart drawer -->
+  <aside id="cart-drawer" class="cart-drawer" aria-hidden="true">
+    <div class="cart-header">
+      <h2>Your cart</h2>
+      <button id="close-cart" class="icon-btn" aria-label="Close cart">Close</button>
+    </div>
+
+    <ul id="cart-items" class="cart-items" role="list"></ul>
+
+    <div class="cart-footer">
+      <div class="total">Total: <strong>$<span id="cart-total">0.00</span></strong></div>
+      <div class="cart-actions">
+        <button id="clear-cart" class="btn ghost">Clear</button>
+        <button id="checkout" class="btn primary">Checkout</button>
+      </div>
+    </div>
+  </aside>
+
+  <div id="toast" class="toast" aria-hidden="true"></div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
